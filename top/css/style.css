@@ -4,11 +4,16 @@ header {
   height: 55px;
 }
 
+.Menu {
+  display: flex;
+}
+
 .Menu-branch {
   align-items: center;
   background: #e11b1e;
-  display: :flex;
+  display: flex;
   height: 55px;
+  padding-right: 10px;
 }
 
 .Menu-branch__logo {
@@ -37,6 +42,7 @@ header {
   height: 100%;
   width: 100px;
   font-size: 13px;
+  cursor: pointer;
 }
 
 .Menu-branch-search-input {
@@ -50,4 +56,5 @@ header {
   width: 35px;
   height: 100%;
   font-size: 13px;
+  cursor: pointer;
 }

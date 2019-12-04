@@ -1,7 +1,7 @@
 <?php
   define('DOC_ROOT', $_SERVER['DOCUMENT_ROOT']);
   define('TITLE', 'HOME');
-  require_once DOC_ROOT.'common\php\common.php';
+  require_once DOC_ROOT.'\common\php\common.php';
  ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,28 @@
             </div>
           </div>
           <div class="Menu-list">
-
+            <div class="Menu-list-item">
+              <div class="Menu-list-item-content">
+                <div class="Menu-list-item-content__icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="Menu-list-item-content__txt">Dien Thoai</div>
+              </div>
+              <div class="Menu-list-item-content">
+                <div class="Menu-list-item-content__icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="Menu-list-item-content__txt">Tablet</div>
+              </div>
+              <div class="Menu-list-item-content">
+                <div class="Menu-list-item-content__icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="Menu-list-item-content__txt">Dien Thoai</div>
+              </div>
+              <div class="Menu-list-item-content">
+                <div class="Menu-list-item-content__icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="Menu-list-item-content__txt">Dien Thoai</div>
+              </div>
+              <div class="Menu-list-item-content">
+                <div class="Menu-list-item-content__icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="Menu-list-item-content__txt">Dien Thoai</div>
+              </div>
+            </div>
           </div>
 
         </div>
