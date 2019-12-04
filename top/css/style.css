@@ -14,6 +14,7 @@ header {
   display: flex;
   height: 55px;
   padding-right: 10px;
+  flex-grow: 1;
 }
 
 .Menu-branch__logo {
@@ -32,6 +33,7 @@ header {
   justify-content: center;
   height: 35px;
   overflow: hidden;
+  flex-grow: 1;
 }
 
 .Menu-branch-search-location {
@@ -46,6 +48,14 @@ header {
 }
 
 .Menu-branch-search-input {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.Menu-branch-search-input input {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
   padding: 0 5px;
 }
 
@@ -57,4 +67,71 @@ header {
   height: 100%;
   font-size: 13px;
   cursor: pointer;
+}
+
+.Menu-list {
+  display: flex;
+}
+
+.Menu-list-item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.Menu-list-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 3px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.Menu-list-item-content:hover {
+  background: #e11b1e;
+  color: white;
+}
+
+.Menu-list-item-content__txt {
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.Menu-list-item-sub {
+  display: none;
+  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(0,100%);
+}
+
+.Menu-list-item:hover .Menu-list-item-sub {
+  display: block;
+}
+
+.Menu-list-item-sub-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 320px;
+}
+
+.Menu-list-item-sub-list-item {
+  width: 50%;
+  padding: 5px 10px;
+  text-align: left;
+}
+
+.Menu-list-item-sub-list-item__txt {
+  color: #555;
+  white-space: nowrap;
+}
+
+.Menu-list-item-sub-list-item__txt:hover {
+  color: #e11b1e;
+  text-decoration: underline;
+  opacity: 1;
 }
