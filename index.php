@@ -91,24 +91,54 @@
     </header>
     <header class="only-sp">
       <div class="js-nav nav">
-        <div class="nav__logo">
-          <img src="\common\img\logo.webp" alt="cellphone">
-        </div>
-        <div class="nav-search">
-          <div class="nav-search-content">
-            <div class="nav-search__input">
-              <input type="text" placeholder="Tim Kiem">
+        <div class="nav-content">
+          <div class="nav__logo">
+            <img src="\common\img\logo.webp" alt="cellphone">
+          </div>
+          <div class="nav-search">
+            <div class="nav-search-content">
+              <div class="nav-search__input">
+                <input type="text" placeholder="Tim Kiem">
+              </div>
+              <div class="nav-search__btn">
+                <i class="fa fa-search"></i>
+              </div>
             </div>
-            <div class="nav-search__btn">
-              <i class="fa fa-search"></i>
+          </div>
+          <div class="nav-hambuger">
+            <div class="js-navHambuger nav-hambuger-content">
+              <span class="nav-hambuge-content__icon"></span>
+              <span class="nav-hambuge-content__icon"></span>
+              <span class="nav-hambuge-content__icon"></span>
             </div>
           </div>
         </div>
-        <div class="nav-hambuger">
-          <div class="js-navHambuger nav-hambuger-content">
-            <span class="nav-hambuge-content__icon"></span>
-            <span class="nav-hambuge-content__icon"></span>
-            <span class="nav-hambuge-content__icon"></span>
+        <div class="nav-menu">
+          <div class="nav-menu-content">
+            <div class="nav-menu-content-list">
+              <a href="#" class="nav-menu-content__item">Dien thoai</a>
+              <a href="#" class="nav-menu-content__item">Dien thoai</a>
+              <a href="#" class="nav-menu-content__item">Dien thoai</a>
+              <a href="#" class="nav-menu-content__item">Dien thoai</a>
+              <a href="#" class="nav-menu-content__item">Dien thoai</a>
+              <a href="#" class="nav-menu-content__item">Dien thoai</a>
+              <a href="#" class="nav-menu-content__item">Dien thoai</a>
+            </div>
+            <div class="nav-menu-content-footer">
+              <div class="nav-menu-content-footer-contact">
+                  <img src="\common\img\contact_free_ico.png" alt="">
+                  <a href="0942343">0987909</a>
+              </div>
+              <div class="nav-menu-content-footer-location">
+                <p>Noi Mua</p>
+                <select >
+                  <option value="hanoi">Ha Noi</option>
+                  <option value="hochiminh">Ho Chi Minh</option>
+                </select>
+              </div>
+            </div>
+
+            </div>
           </div>
         </div>
       </div>

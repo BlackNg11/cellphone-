@@ -15,7 +15,11 @@
 
     $('.js-navHambuger').click(function() {
       $('.js-nav').toggleClass('nav--active')
-
+      if($('.js-nav').hasClass('nav--active')) {
+        $('body').addClass('noScroll');
+      } else {
+        $('body').removeClass('noScroll');
+      }
     });
   })
 })(jQuery);
