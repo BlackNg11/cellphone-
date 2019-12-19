@@ -63,3 +63,27 @@ input, select, textarea {
 .Noscroll {
   overflow: hidden;
 }
+
+/*********************** Notification ******************/
+
+.notification {
+  border-radius: 5px;
+  border: 1px solid #28a745;
+  background: #d1ffdc;
+  padding: 10px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 300px;
+  transition: transform ease 500ms;
+  transform: translateX(400px);
+}
+
+.notification[data-error = "0"] {
+  border: 1px solid #dc3545;
+  background: #efe2e4;
+}
+
+.notification--active {
+  transform: translateX(0px);
+}

@@ -9,140 +9,343 @@
   <head>
     <?php insertHeadInfo();  ?>
     <?php insertCSS('/top/css/style.css');  ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   </head>
   <body>
-    <header class="only-pc">
-      <div class="Responsive">
-        <div class="Menu">
-          <div class="Menu-branch">
-            <div class="Menu-branch__logo">
-              <img src="/common/img/logo.webp" alt="">
-            </div>
-            <div class="Menu-branch-search">
-              <div class="Menu-branch-search-location">
-                <p class="js-locationBtn Menu-branch-search-location__txt">Ha Noi</p>
-                <div class="Menu-branch-search-location-select">
-                  <p class="js-locationOption"><i class="fa fa-map-marker"></i><span>Ha Noi</span></p>
-                  <p class="js-locationOption"><i class="fa fa-map-marker"></i><span>Ho Chi Minh</span></p>
+    <!-- Cart -->
+    <div class="js-cart cart cart--disable">
+      <div class="js-cartView cart__btn" data-count="3">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+    </div>
+    <!-- Notification -->
+    <div class="js-notification notification" data-error='0'>
+      <div class="notification-content">
+        <div class="js-notiMessage notification-content-message"></div>
+      </div>
+    </div>
+    <!-- HEADER -->
+    <?php include_once DOC_ROOT.'\common\inc\header.inc'; ?>
+    <!-- BANNER -->
+    <?php include_once DOC_ROOT.'\common\inc\carousel.inc'; ?>
+    <!-- ITEM LIST -->
+    <div class="Responsive">
+      <div class="product">
+        <div class="product-head">
+          <div class="product-head__txt">
+            <a href="#">Ban Chay</a>
+          </div>
+          <div class="product-head__tag">
+            <a href="#">Iphone</a>
+            <a href="#">Iphone</a>
+            <a href="#">Iphone</a>
+            <a href="#">Iphone</a>
+            <a href="#">Iphone</a>
+            <a href="#">Iphone</a>
+          </div>
+        </div>
+        <div class="product-content">
+          <div class="product-content-list">
+            <div class="product-content-item">
+              <div class="product-content-item__img">
+                <img src="\top\img\product_item_img.webp" alt="Iphone">
+              </div>
+              <div class="product-content-item-detail">
+                <p class="product-content-item-detail__name">Iphone 11 Chinh Hang</p>
+                <p class="product-content-item-detail__price">23.000.000 d<span>28.000.000 d</span></p>
+                <p class="product-content-item-detail__txt">Thu cu doi moi | pro | max - gia thu tot nhat thi truong va <strong>1 km</strong> khac</p>
+              </div>
+              <div class="product-content-item-gift">
+                <div class="js-productGiftButton product-content-item-gift__btn">
+                  <i class="fas fa-gift"></i> Qua Tang
+                </div>
+                <div class="product-content-item-gift-detail">
+                  <p class="product-content-item-gift-detail__ttl">Tra gop 0%:</p>
+                  <p class="product-content-item-gift-detail__txt">Tra gop lai xuat 0%</p>
+                  <p class="product-content-item-gift-detail__ttl">Chuyen trinh khuyen mai:</p>
+                  <p class="product-content-item-gift-detail__txt">Giam 200.000 khi mua tai nghe Airpod</p>
+                  <p class="product-content-item-gift-detail__txt">Thu cu doi moi Iphone 11</p>
+                  <p class="product-content-item-gift-detail__ttl">Nham them khuyen mai sau:</p>
+                  <p class="product-content-item-gift-detail__txt">Tu 1-30/11 Giam 500.000 khi tra gop 0% tai chinh HomeCredit</p>
                 </div>
               </div>
-              <div class="Menu-branch-search-input">
-                <input type="text" placeholder="tim kiem">
-              </div>
-              <div class="Menu-branch-search-btn">
-                <i class="fa fa-search"></i>
-              </div>
-            </div>
-          </div>
-          <div class="Menu-list">
-            <div class="Menu-list-item">
-              <div class="Menu-list-item-content">
-                <div class="Menu-list-item-content__icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="Menu-list-item-content__txt">DIEN THOAI</div>
-              </div>
-            </div>
-            <div class="Menu-list-item">
-              <div class="js-menuListItem Menu-list-item-content">
-                <div class="Menu-list-item-content__icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="Menu-list-item-content__txt">TABLET</div>
-              </div>
-              <div class="Menu-list-item-sub">
-                <div class="Menu-list-item-sub-list">
-                  <div class="Menu-list-item-sub-list-item">
-                    <a href="#" class="Menu-list-item-sub-list-item__txt">iPad Pro</a>
-                  </div>
-                  <div class="Menu-list-item-sub-list-item">
-                    <a href="#" class="Menu-list-item-sub-list-item__txt">iPad Pro</a>
-                  </div>
-                  <div class="Menu-list-item-sub-list-item">
-                    <a href="#" class="Menu-list-item-sub-list-item__txt">iPad Pro</a>
-                  </div>
-                  <div class="Menu-list-item-sub-list-item">
-                    <a href="#" class="Menu-list-item-sub-list-item__txt">iPad Pro</a>
-                  </div>
-                  <div class="Menu-list-item-sub-list-item">
-                    <a href="#" class="Menu-list-item-sub-list-item__txt">iPad Pro</a>
-                  </div>
+              <div class="product-content-item-cart">
+                <div class="js-productCartBtn product-content-item-cart__btn">
+                  <i class="fas fa-cart-plus"></i> Them Vao Gio Hang
                 </div>
               </div>
             </div>
-            <div class="Menu-list-item">
-              <div class="Menu-list-item-content">
-                <div class="Menu-list-item-content__icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="Menu-list-item-content__txt">PHU KIEN</div>
+            <div class="product-content-item">
+              <div class="product-content-item__img">
+                <img src="\top\img\product_item_img.webp" alt="Iphone">
+              </div>
+              <div class="product-content-item-detail">
+                <p class="product-content-item-detail__name">Iphone 14 Chinh Hang</p>
+                <p class="product-content-item-detail__price">23.000.000 d<span>28.000.000 d</span></p>
+                <p class="product-content-item-detail__txt">Thu cu doi moi | pro | max - gia thu tot nhat thi truong va <strong>1 km</strong> khac</p>
+              </div>
+              <div class="product-content-item-gift">
+                <div class="js-productGiftButton product-content-item-gift__btn">
+                  <i class="fas fa-gift"></i> Qua Tang
+                </div>
+                <div class="product-content-item-gift-detail">
+                  <p class="product-content-item-gift-detail__ttl">Tra gop 0%:</p>
+                  <p class="product-content-item-gift-detail__txt">Tra gop lai xuat 0%</p>
+                  <p class="product-content-item-gift-detail__ttl">Chuyen trinh khuyen mai:</p>
+                  <p class="product-content-item-gift-detail__txt">Giam 200.000 khi mua tai nghe Airpod</p>
+                  <p class="product-content-item-gift-detail__txt">Thu cu doi moi Iphone 11</p>
+                  <p class="product-content-item-gift-detail__ttl">Nham them khuyen mai sau:</p>
+                  <p class="product-content-item-gift-detail__txt">Tu 1-30/11 Giam 500.000 khi tra gop 0% tai chinh HomeCredit</p>
+                </div>
+              </div>
+              <div class="product-content-item-cart">
+                <div class="js-productCartBtn product-content-item-cart__btn">
+                  <i class="fas fa-cart-plus"></i> Them Vao Gio Hang
+                </div>
               </div>
             </div>
-            <div class="Menu-list-item">
-              <div class="Menu-list-item-content">
-                <div class="Menu-list-item-content__icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="Menu-list-item-content__txt">DONG HO</div>
+            <div class="product-content-item">
+              <div class="product-content-item__img">
+                <img src="\top\img\product_item_img.webp" alt="Iphone">
+              </div>
+              <div class="product-content-item-detail">
+                <p class="product-content-item-detail__name">Iphone 11 Chinh Hang</p>
+                <p class="product-content-item-detail__price">23.000.000 d<span>28.000.000 d</span></p>
+                <p class="product-content-item-detail__txt">Thu cu doi moi | pro | max - gia thu tot nhat thi truong va <strong>1 km</strong> khac</p>
+              </div>
+              <div class="product-content-item-gift">
+                <div class="js-productGiftButton product-content-item-gift__btn">
+                  <i class="fas fa-gift"></i> Qua Tang
+                </div>
+                <div class="product-content-item-gift-detail">
+                  <p class="product-content-item-gift-detail__ttl">Tra gop 0%:</p>
+                  <p class="product-content-item-gift-detail__txt">Tra gop lai xuat 0%</p>
+                  <p class="product-content-item-gift-detail__ttl">Chuyen trinh khuyen mai:</p>
+                  <p class="product-content-item-gift-detail__txt">Giam 200.000 khi mua tai nghe Airpod</p>
+                  <p class="product-content-item-gift-detail__txt">Thu cu doi moi Iphone 11</p>
+                  <p class="product-content-item-gift-detail__ttl">Nham them khuyen mai sau:</p>
+                  <p class="product-content-item-gift-detail__txt">Tu 1-30/11 Giam 500.000 khi tra gop 0% tai chinh HomeCredit</p>
+                </div>
+              </div>
+              <div class="product-content-item-cart">
+                <div class="js-productCartBtn product-content-item-cart__btn">
+                  <i class="fas fa-cart-plus"></i> Them Vao Gio Hang
+                </div>
               </div>
             </div>
-            <div class="Menu-list-item">
-              <div class="Menu-list-item-content">
-                <div class="Menu-list-item-content__icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="Menu-list-item-content__txt">HANG CU</div>
+            <div class="product-content-item">
+              <div class="product-content-item__img">
+                <img src="\top\img\product_item_img.webp" alt="Iphone">
+              </div>
+              <div class="product-content-item-detail">
+                <p class="product-content-item-detail__name">Iphone 11 Chinh Hang</p>
+                <p class="product-content-item-detail__price">23.000.000 d<span>28.000.000 d</span></p>
+                <p class="product-content-item-detail__txt">Thu cu doi moi | pro | max - gia thu tot nhat thi truong va <strong>1 km</strong> khac</p>
+              </div>
+              <div class="product-content-item-gift">
+                <div class="js-productGiftButton product-content-item-gift__btn">
+                  <i class="fas fa-gift"></i> Qua Tang
+                </div>
+                <div class="product-content-item-gift-detail">
+                  <p class="product-content-item-gift-detail__ttl">Tra gop 0%:</p>
+                  <p class="product-content-item-gift-detail__txt">Tra gop lai xuat 0%</p>
+                  <p class="product-content-item-gift-detail__ttl">Chuyen trinh khuyen mai:</p>
+                  <p class="product-content-item-gift-detail__txt">Giam 200.000 khi mua tai nghe Airpod</p>
+                  <p class="product-content-item-gift-detail__txt">Thu cu doi moi Iphone 11</p>
+                  <p class="product-content-item-gift-detail__ttl">Nham them khuyen mai sau:</p>
+                  <p class="product-content-item-gift-detail__txt">Tu 1-30/11 Giam 500.000 khi tra gop 0% tai chinh HomeCredit</p>
+                </div>
+              </div>
+              <div class="product-content-item-cart">
+                <div class="js-productCartBtn product-content-item-cart__btn">
+                  <i class="fas fa-cart-plus"></i> Them Vao Gio Hang
+                </div>
+              </div>
+            </div>
+            <div class="product-content-item">
+              <div class="product-content-item__img">
+                <img src="\top\img\product_item_img.webp" alt="Iphone">
+              </div>
+              <div class="product-content-item-detail">
+                <p class="product-content-item-detail__name">Iphone 11 Chinh Hang</p>
+                <p class="product-content-item-detail__price">23.000.000 d<span>28.000.000 d</span></p>
+                <p class="product-content-item-detail__txt">Thu cu doi moi | pro | max - gia thu tot nhat thi truong va <strong>1 km</strong> khac</p>
+              </div>
+              <div class="product-content-item-gift">
+                <div class="js-productGiftButton product-content-item-gift__btn">
+                  <i class="fas fa-gift"></i> Qua Tang
+                </div>
+                <div class="product-content-item-gift-detail">
+                  <p class="product-content-item-gift-detail__ttl">Tra gop 0%:</p>
+                  <p class="product-content-item-gift-detail__txt">Tra gop lai xuat 0%</p>
+                  <p class="product-content-item-gift-detail__ttl">Chuyen trinh khuyen mai:</p>
+                  <p class="product-content-item-gift-detail__txt">Giam 200.000 khi mua tai nghe Airpod</p>
+                  <p class="product-content-item-gift-detail__txt">Thu cu doi moi Iphone 11</p>
+                  <p class="product-content-item-gift-detail__ttl">Nham them khuyen mai sau:</p>
+                  <p class="product-content-item-gift-detail__txt">Tu 1-30/11 Giam 500.000 khi tra gop 0% tai chinh HomeCredit</p>
+                </div>
+              </div>
+              <div class="product-content-item-cart">
+                <div class="js-productCartBtn product-content-item-cart__btn">
+                  <i class="fas fa-cart-plus"></i> Them Vao Gio Hang
+                </div>
+              </div>
+            </div>
+            <div class="product-content-item">
+              <div class="product-content-item__img">
+                <img src="\top\img\product_item_img.webp" alt="Iphone">
+              </div>
+              <div class="product-content-item-detail">
+                <p class="product-content-item-detail__name">Iphone 11 Chinh Hang</p>
+                <p class="product-content-item-detail__price">23.000.000 d<span>28.000.000 d</span></p>
+                <p class="product-content-item-detail__txt">Thu cu doi moi | pro | max - gia thu tot nhat thi truong va <strong>1 km</strong> khac</p>
+              </div>
+              <div class="product-content-item-gift">
+                <div class="js-productGiftButton product-content-item-gift__btn">
+                  <i class="fas fa-gift"></i> Qua Tang
+                </div>
+                <div class="product-content-item-gift-detail">
+                  <p class="product-content-item-gift-detail__ttl">Tra gop 0%:</p>
+                  <p class="product-content-item-gift-detail__txt">Tra gop lai xuat 0%</p>
+                  <p class="product-content-item-gift-detail__ttl">Chuyen trinh khuyen mai:</p>
+                  <p class="product-content-item-gift-detail__txt">Giam 200.000 khi mua tai nghe Airpod</p>
+                  <p class="product-content-item-gift-detail__txt">Thu cu doi moi Iphone 11</p>
+                  <p class="product-content-item-gift-detail__ttl">Nham them khuyen mai sau:</p>
+                  <p class="product-content-item-gift-detail__txt">Tu 1-30/11 Giam 500.000 khi tra gop 0% tai chinh HomeCredit</p>
+                </div>
+              </div>
+              <div class="product-content-item-cart">
+                <div class="js-productCartBtn product-content-item-cart__btn">
+                  <i class="fas fa-cart-plus"></i> Them Vao Gio Hang
+                </div>
+              </div>
+            </div>
+            <div class="product-content-item">
+              <div class="product-content-item__img">
+                <img src="\top\img\product_item_img.webp" alt="Iphone">
+              </div>
+              <div class="product-content-item-detail">
+                <p class="product-content-item-detail__name">Iphone 15 Chinh Hang</p>
+                <p class="product-content-item-detail__price">23.000.000 d<span>28.000.000 d</span></p>
+                <p class="product-content-item-detail__txt">Thu cu doi moi | pro | max - gia thu tot nhat thi truong va <strong>1 km</strong> khac</p>
+              </div>
+              <div class="product-content-item-gift">
+                <div class="js-productGiftButton product-content-item-gift__btn">
+                  <i class="fas fa-gift"></i> Qua Tang
+                </div>
+                <div class="product-content-item-gift-detail">
+                  <p class="product-content-item-gift-detail__ttl">Tra gop 0%:</p>
+                  <p class="product-content-item-gift-detail__txt">Tra gop lai xuat 0%</p>
+                  <p class="product-content-item-gift-detail__ttl">Chuyen trinh khuyen mai:</p>
+                  <p class="product-content-item-gift-detail__txt">Giam 200.000 khi mua tai nghe Airpod</p>
+                  <p class="product-content-item-gift-detail__txt">Thu cu doi moi Iphone 11</p>
+                  <p class="product-content-item-gift-detail__ttl">Nham them khuyen mai sau:</p>
+                  <p class="product-content-item-gift-detail__txt">Tu 1-30/11 Giam 500.000 khi tra gop 0% tai chinh HomeCredit</p>
+                </div>
+              </div>
+              <div class="product-content-item-cart">
+                <div class="js-productCartBtn product-content-item-cart__btn">
+                  <i class="fas fa-cart-plus"></i> Them Vao Gio Hang
+                </div>
+              </div>
+            </div>
+            <div class="product-content-item">
+              <div class="product-content-item__img">
+                <img src="\top\img\product_item_img.webp" alt="Iphone">
+              </div>
+              <div class="product-content-item-detail">
+                <p class="product-content-item-detail__name">Iphone 11 Chinh Hang</p>
+                <p class="product-content-item-detail__price">23.000.000 d<span>28.000.000 d</span></p>
+                <p class="product-content-item-detail__txt">Thu cu doi moi | pro | max - gia thu tot nhat thi truong va <strong>1 km</strong> khac</p>
+              </div>
+              <div class="product-content-item-gift">
+                <div class="js-productGiftButton product-content-item-gift__btn">
+                  <i class="fas fa-gift"></i> Qua Tang
+                </div>
+                <div class="product-content-item-gift-detail">
+                  <p class="product-content-item-gift-detail__ttl">Tra gop 0%:</p>
+                  <p class="product-content-item-gift-detail__txt">Tra gop lai xuat 0%</p>
+                  <p class="product-content-item-gift-detail__ttl">Chuyen trinh khuyen mai:</p>
+                  <p class="product-content-item-gift-detail__txt">Giam 200.000 khi mua tai nghe Airpod</p>
+                  <p class="product-content-item-gift-detail__txt">Thu cu doi moi Iphone 11</p>
+                  <p class="product-content-item-gift-detail__ttl">Nham them khuyen mai sau:</p>
+                  <p class="product-content-item-gift-detail__txt">Tu 1-30/11 Giam 500.000 khi tra gop 0% tai chinh HomeCredit</p>
+                </div>
+              </div>
+              <div class="product-content-item-cart">
+                <div class="js-productCartBtn product-content-item-cart__btn">
+                  <i class="fas fa-cart-plus"></i> Them Vao Gio Hang
+                </div>
+              </div>
+            </div>
+            <div class="product-content-item">
+              <div class="product-content-item__img">
+                <img src="\top\img\product_item_img.webp" alt="Iphone">
+              </div>
+              <div class="product-content-item-detail">
+                <p class="product-content-item-detail__name">Iphone 11 Chinh Hang</p>
+                <p class="product-content-item-detail__price">23.000.000 d<span>28.000.000 d</span></p>
+                <p class="product-content-item-detail__txt">Thu cu doi moi | pro | max - gia thu tot nhat thi truong va <strong>1 km</strong> khac</p>
+              </div>
+              <div class="product-content-item-gift">
+                <div class="js-productGiftButton product-content-item-gift__btn">
+                  <i class="fas fa-gift"></i> Qua Tang
+                </div>
+                <div class="product-content-item-gift-detail">
+                  <p class="product-content-item-gift-detail__ttl">Tra gop 0%:</p>
+                  <p class="product-content-item-gift-detail__txt">Tra gop lai xuat 0%</p>
+                  <p class="product-content-item-gift-detail__ttl">Chuyen trinh khuyen mai:</p>
+                  <p class="product-content-item-gift-detail__txt">Giam 200.000 khi mua tai nghe Airpod</p>
+                  <p class="product-content-item-gift-detail__txt">Thu cu doi moi Iphone 11</p>
+                  <p class="product-content-item-gift-detail__ttl">Nham them khuyen mai sau:</p>
+                  <p class="product-content-item-gift-detail__txt">Tu 1-30/11 Giam 500.000 khi tra gop 0% tai chinh HomeCredit</p>
+                </div>
+              </div>
+              <div class="product-content-item-cart">
+                <div class="js-productCartBtn product-content-item-cart__btn">
+                  <i class="fas fa-cart-plus"></i> Them Vao Gio Hang
+                </div>
+              </div>
+            </div>
+            <div class="product-content-item">
+              <div class="product-content-item__img">
+                <img src="\top\img\product_item_img.webp" alt="Iphone">
+              </div>
+              <div class="product-content-item-detail">
+                <p class="product-content-item-detail__name">Iphone 11 Chinh Hang</p>
+                <p class="product-content-item-detail__price">23.000.000 d<span>28.000.000 d</span></p>
+                <p class="product-content-item-detail__txt">Thu cu doi moi | pro | max - gia thu tot nhat thi truong va <strong>1 km</strong> khac</p>
+              </div>
+              <div class="product-content-item-gift">
+                <div class="js-productGiftButton product-content-item-gift__btn">
+                  <i class="fas fa-gift"></i> Qua Tang
+                </div>
+                <div class="product-content-item-gift-detail">
+                  <p class="product-content-item-gift-detail__ttl">Tra gop 0%:</p>
+                  <p class="product-content-item-gift-detail__txt">Tra gop lai xuat 0%</p>
+                  <p class="product-content-item-gift-detail__ttl">Chuyen trinh khuyen mai:</p>
+                  <p class="product-content-item-gift-detail__txt">Giam 200.000 khi mua tai nghe Airpod</p>
+                  <p class="product-content-item-gift-detail__txt">Thu cu doi moi Iphone 11</p>
+                  <p class="product-content-item-gift-detail__ttl">Nham them khuyen mai sau:</p>
+                  <p class="product-content-item-gift-detail__txt">Tu 1-30/11 Giam 500.000 khi tra gop 0% tai chinh HomeCredit</p>
+                </div>
+              </div>
+              <div class="product-content-item-cart">
+                <div class="js-productCartBtn product-content-item-cart__btn">
+                  <i class="fas fa-cart-plus"></i> Them Vao Gio Hang
+                </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
-    </header>
-    <header class="only-sp">
-      <div class="js-nav nav">
-        <div class="nav-content">
-          <div class="nav__logo">
-            <img src="\common\img\logo.webp" alt="cellphone">
-          </div>
-          <div class="nav-search">
-            <div class="nav-search-content">
-              <div class="nav-search__input">
-                <input type="text" placeholder="Tim Kiem">
-              </div>
-              <div class="nav-search__btn">
-                <i class="fa fa-search"></i>
-              </div>
-            </div>
-          </div>
-          <div class="nav-hambuger">
-            <div class="js-navHambuger nav-hambuger-content">
-              <span class="nav-hambuge-content__icon"></span>
-              <span class="nav-hambuge-content__icon"></span>
-              <span class="nav-hambuge-content__icon"></span>
-            </div>
-          </div>
-        </div>
-        <div class="nav-menu">
-          <div class="nav-menu-content">
-            <div class="nav-menu-content-list">
-              <a href="#" class="nav-menu-content__item">Dien thoai</a>
-              <a href="#" class="nav-menu-content__item">Dien thoai</a>
-              <a href="#" class="nav-menu-content__item">Dien thoai</a>
-              <a href="#" class="nav-menu-content__item">Dien thoai</a>
-              <a href="#" class="nav-menu-content__item">Dien thoai</a>
-              <a href="#" class="nav-menu-content__item">Dien thoai</a>
-              <a href="#" class="nav-menu-content__item">Dien thoai</a>
-            </div>
-            <div class="nav-menu-content-footer">
-              <div class="nav-menu-content-footer-contact">
-                  <img src="\common\img\contact_free_ico.png" alt="">
-                  <a href="0942343">0987909</a>
-              </div>
-              <div class="nav-menu-content-footer-location">
-                <p>Noi Mua</p>
-                <select >
-                  <option value="hanoi">Ha Noi</option>
-                  <option value="hochiminh">Ho Chi Minh</option>
-                </select>
-              </div>
-            </div>
+    </div>
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+
+    <!-- FOOTER -->
+    <footer></footer>
+
     <?php insertJS('/top/js/script.js');  ?>
+
   </body>
 </html>
